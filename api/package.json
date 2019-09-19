@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -21,6 +23,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "eslint": "^6.4.0",
     "nodemon": "^1.19.2"
   }
 }
