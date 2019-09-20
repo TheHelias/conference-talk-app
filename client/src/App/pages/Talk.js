@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Joint from './Joint';
 
-export default class Home extends Component {
+export default class Talk extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      full_name: '',
-      email: '',
+      title: '',
+      time_limit: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -23,7 +23,7 @@ export default class Home extends Component {
   async onSubmit(event) {
     event.preventDefault();
     try {
-      const response = await fetch('/api/add_attendee', {
+      const response = await fetch('/api/add_talk', {
         method: 'POST',
         body: JSON.stringify(this.state),
         headers: { 'Content-Type': 'application/json' },
@@ -40,37 +40,37 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className='attendee-div'>
+      <div className='talk-div'>
         <form onSubmit={this.onSubmit}>
-        <p>Input your details if you want to attend the conference!</p>
+        <p>Input the details of your speech!</p>
         <div>
         <input
           type="text"
-          name="full_name"
-          placeholder="Enter Full name"
-          value={this.state.full_name}
+          name="title"
+          placeholder="Talk Title"
+          value={this.state.title}
           onChange={this.handleInputChange}
           required
         />
         </div>
         <div>
         <input
-          type="email"
-          name="email"
-          placeholder="Your email"
-          value={this.state.email}
+          type="text"
+          name="time_limit"
+          placeholder="How long the talks last"
+          value={this.state.time_limit}
           onChange={this.handleInputChange}
           required
         />
         </div>
         <div>
-        <input className="button" type="submit" value="Attend" />
+        <input className="button" type="submit" value="Book Talk" />
         </div>
       </form>
       <p>{this.state.resMess}</p>
       <div className="talk-div">
-          <span>Already attending?</span>
-          <Link className="link" to='/talk'>Add a Talk Instead</Link>
+          <span>Haven't booked a seat?</span>
+          <Link className="link" to='/'>Attend here</Link>
       </div>
       <Joint/>
       </div>

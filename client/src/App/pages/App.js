@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Home from './Home';
-import List from './List';
+import Talk from './Talk';
+import Assignedtalks from './assignedtalks';
+import Talklist from './talklist';
+import Attendlist from './attendlist';
+import AssignedTalksList from './assignedtalkslist';
 
 class App extends Component {
   render() {
@@ -10,7 +14,12 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/list' component={List}/>
+          <Route path='/talk' component={Talk}/>
+          <Route path='/assignedtalks' component={Assignedtalks}/>
+          <Route path='/talklist' component={Talklist}/>
+          <Route path='/attendlist' component={Attendlist}/>
+          <Route path='/assignedtalkslist' component={AssignedTalksList}/>
+          <Route path='/talklist/:talkId' component={Talklist}/>
         </Switch>
       </div>
     )
