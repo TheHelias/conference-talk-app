@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Joint from './Joint';
+import Header from './header';
 
 export default class Assignedtalks extends React.Component {
   constructor(props) {
@@ -56,8 +58,10 @@ export default class Assignedtalks extends React.Component {
     const talks = talklist.map(list => list.title);
 
     return (
-      <div>
+      <div className="assign-page">
+        <Header/>
         <form onSubmit={this.onSubmit}>
+        <h2>Attendee </h2>
         <select 
         name='attendee'
         value={this.state.attendee}
@@ -73,6 +77,7 @@ export default class Assignedtalks extends React.Component {
             <option>{people[8]}</option>
             <option>{people[9]}</option>
         </select>
+        <h2>Talk </h2>
         <select 
         name='talk'
         value={this.state.talk}
@@ -89,9 +94,10 @@ export default class Assignedtalks extends React.Component {
             <option>{talks[9]}</option>
         </select>
 
-        <input type='submit' value='Assign'/>
+        <input className="button" type='submit' value='Assign'/>
         </form>
         <p>{this.state.resMess}</p>
+        <Joint/>
       </div>
     );
   }

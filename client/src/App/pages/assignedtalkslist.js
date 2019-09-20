@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Joint from './Joint';
+import Header from './header';
 
 export default class AssignedTalksList extends React.Component {
   constructor(props) {
@@ -19,19 +21,17 @@ export default class AssignedTalksList extends React.Component {
   render() {
     const { assignedtalklist } = this.state;
     return (
+      <div className="assignedlist-div">
+        <Header/>
+        <h2>Assigned Talks </h2>
       <ul>
         {assignedtalklist.map(list => <li key={list._id}>
-            <h4> {list.talk} </h4>
+            <h3> {list.talk} </h3>
             <p> {list.attendee} </p>
-            {/* <form onSubmit="this.handleSubmit">
-              <input 
-                id = {talks._id}
-                value="delete"
-                type="submit"
-              />
-            </form> */}
           </li>)}
       </ul>
+      <Joint/>
+      </div>
     );
   }
 }

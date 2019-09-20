@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Joint from './Joint';
+import Header from './header';
 
 export default class Home extends Component {
   constructor(props) {
@@ -40,6 +41,8 @@ export default class Home extends Component {
 
   render() {
     return (
+      <div>
+        <Header/>
       <div className='attendee-div'>
         <form onSubmit={this.onSubmit}>
         <p>Input your details if you want to attend the conference!</p>
@@ -57,7 +60,7 @@ export default class Home extends Component {
         <input
           type="email"
           name="email"
-          placeholder="Your email"
+          placeholder="Your Email"
           value={this.state.email}
           onChange={this.handleInputChange}
           required
@@ -69,10 +72,10 @@ export default class Home extends Component {
       </form>
       <p>{this.state.resMess}</p>
       <div className="talk-div">
-          <span>Already attending?</span>
-          <Link className="link" to='/talk'>Add a Talk Instead</Link>
+          <Link className="link" to='/talk'>Click this to add a talk</Link>
       </div>
       <Joint/>
+      </div>
       </div>
     );
   }

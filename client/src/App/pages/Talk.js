@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Joint from './Joint';
+import Header from './header';
 
 export default class Talk extends Component {
   constructor(props) {
@@ -40,14 +41,16 @@ export default class Talk extends Component {
 
   render() {
     return (
+      <div>
+        <Header/>
       <div className='talk-div'>
         <form onSubmit={this.onSubmit}>
-        <p>Input the details of your speech!</p>
+        <p>Input the details of the talk</p>
         <div>
         <input
           type="text"
           name="title"
-          placeholder="Talk Title"
+          placeholder="Input The Talk Title"
           value={this.state.title}
           onChange={this.handleInputChange}
           required
@@ -57,7 +60,7 @@ export default class Talk extends Component {
         <input
           type="text"
           name="time_limit"
-          placeholder="How long the talks last"
+          placeholder="Time Allowed for Talk"
           value={this.state.time_limit}
           onChange={this.handleInputChange}
           required
@@ -69,10 +72,10 @@ export default class Talk extends Component {
       </form>
       <p>{this.state.resMess}</p>
       <div className="talk-div">
-          <span>Haven't booked a seat?</span>
-          <Link className="link" to='/'>Attend here</Link>
+          <Link className="link" to='/'>Click here to book a seat at the conference</Link>
       </div>
       <Joint/>
+      </div>
       </div>
     );
   }
