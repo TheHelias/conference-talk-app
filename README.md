@@ -24,6 +24,7 @@ To test the application, run npm start
 
 ### Technologies
 ECMAScript 2015 - ES6: One of the newest versions of JavsScript with new features such as arrow functions, spread and rest operators and many more.
+
 ESLint
 
 ### Language
