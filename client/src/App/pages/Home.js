@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Joint from './Joint';
+import Joint from './join';
 import Header from './header';
 
 export default class Home extends Component {

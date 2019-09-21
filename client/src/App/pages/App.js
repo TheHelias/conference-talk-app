@@ -7,6 +7,7 @@ import Assignedtalks from './assignedtalks';
 import Talklist from './talklist';
 import Attendlist from './attendlist';
 import AssignedTalksList from './assignedtalkslist';
+import TalkInfo from './talkinfo';
 
 class App extends Component {
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
           <Route path='/talklist' component={Talklist}/>
           <Route path='/attendlist' component={Attendlist}/>
           <Route path='/assignedtalkslist' component={AssignedTalksList}/>
-          <Route path='/talklist/:talkId' component={Talklist}/>
+          <Route path='/talkinfo/:talkId' component={TalkInfo}/>
         </Switch>
       </div>
     )

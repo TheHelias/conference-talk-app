@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Joint from './Joint';
+import Joint from './join';
 import Header from './header';
 
 export default class Talk extends Component {
@@ -9,6 +9,7 @@ export default class Talk extends Component {
     this.state = {
       title: '',
       time_limit: '',
+      talk_summary: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -62,6 +63,16 @@ export default class Talk extends Component {
           name="time_limit"
           placeholder="Time Allowed for Talk"
           value={this.state.time_limit}
+          onChange={this.handleInputChange}
+          required
+        />
+        </div>
+        <div>
+        <input
+          type="text"
+          name="talk_summary"
+          placeholder="Give a summary of your talk"
+          value={this.state.talk_summary}
           onChange={this.handleInputChange}
           required
         />
