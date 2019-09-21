@@ -31,7 +31,7 @@ clone the repo
 
 Run npm install to install all the application dependencies listed in package.json
 
-To test the application, run npm start
+To test the application, run 'npm start' from the root of api folder and also from the root of client folder
 
 ### Technologies
 ECMAScript 2015 - ES6: One of the newest versions of JavsScript with new features such as arrow functions, spread and rest operators and many more.
