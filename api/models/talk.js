@@ -13,6 +13,10 @@ const TalkSchema = new Schema({
       type: 'String',
       required: true,
       trim: true
+    },
+    talk_summary:{
+      type: 'String',
+      required: true
     }
   });
 

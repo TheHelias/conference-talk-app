@@ -14,5 +14,6 @@ app.post('/api/assign_talk', assignedTalksController.assignTalk);
 app.get('/api/talks', talkController.getAllTalks);
 app.get('/api/attendees', attendeeController.getAllAttendees);
 app.get('/api/assigned_talks', assignedTalksController.getAllAssignedTalks);
-app.post('/api/talks/:id', talkController.deleteTalk);
+app.get('/api/get_talk/:id', talkController.getOneTalk);
+app.post('/api/delete_talk/:id', talkController.deleteTalk);
 module.exports = app;
