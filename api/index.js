@@ -8,6 +8,8 @@ const logger = require('morgan');
 const app = express();
 
 const mongoose = require('mongoose');
+
+//The URL below isn't supposed to be there as it exposes sensitive information but I left it there to enable easy testing in case the reviewer wants to test it locally.
 const dev_db_url = 'mongodb+srv://thElias:amunigun96%23@cluster0-o03gb.mongodb.net/innovations_conference?retryWrites=true&w=majority';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
